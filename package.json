@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "node": "node",
-    "postinstall": "ng build && mv dist/* ."
+    "postinstall": "ng build --prod --aot"
   },
   "repository": {
     "type": "git",
