@@ -5,12 +5,13 @@
   "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve && node server.js",
-    "build": "ng build & node server.js",
+    "start": "node server.js",
+    "build": "node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "node": "node"
+    "node": "node",
+    "postinstall": "ng build && mv dist/* ."
   },
   "repository": {
     "type": "git",
@@ -42,8 +43,6 @@
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "1.2.6",
-    "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
