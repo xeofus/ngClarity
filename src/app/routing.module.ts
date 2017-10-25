@@ -1,21 +1,29 @@
-import {NgModule}                     from '@angular/core';
-import {Routes, RouterModule}         from '@angular/router';
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {SettingsComponent} from "./settings/settings.component";
+/**
+ * Created by xeofus on 05.10.2017.
+ */
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {SettingsComponent} from "./pages/settings/settings.component";
+import {PageNotFoundComponent} from "./pages/pageNotFound/pageNotFound.component";
 
 const appRoutes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
   },
   {
     path: 'settings',
-    component: SettingsComponent
+    component: SettingsComponent,
   },
   {
     path: '',
-    redirectTo: '/',
-    pathMatch: 'full',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 

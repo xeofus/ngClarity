@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 
 @Component({
@@ -6,18 +6,18 @@ import {TranslateService} from "@ngx-translate/core";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(
-    public translate: TranslateService,
-  ){
-    translate.addLangs(["en", "ru"]);
-    translate.setDefaultLang('en');
+export class AppComponent implements OnInit{
+  constructor(public translate: TranslateService){}
 
-    let browserLang = translate.getBrowserLang();
+  ngOnInit(){
+    this.translate.addLangs(["en", "ru"]);
+    this.translate.setDefaultLang('en');
+
+    let browserLang = this.translate.getBrowserLang();
     if (browserLang.match( /en|ru/ )) {
-      translate.use( browserLang );
+      this.translate.use( browserLang );
     } else {
-      translate.use( 'en' );
+      this.translate.use( 'en' );
     }
   }
 }

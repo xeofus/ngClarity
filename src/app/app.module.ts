@@ -1,14 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { ClarityModule } from "clarity-angular";
+import {BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgModule } from '@angular/core';
+import {ClarityModule } from "clarity-angular";
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { AppComponent } from './app.component';
-import {DashboardComponent} from "./dashboard/dashboard.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AppComponent } from './app.component';
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import {AppRoutingModule} from "./routing.module";
-import {SettingsComponent} from "./settings/settings.component";
+import {SettingsComponent} from "./pages/settings/settings.component";
+import {PageNotFoundComponent} from "./pages/pageNotFound/pageNotFound.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -18,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     DashboardComponent,
-    SettingsComponent
+    SettingsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
