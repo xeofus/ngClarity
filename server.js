@@ -4,17 +4,12 @@
 "use strict";
 const express = require('express'),
   app = express(),
-  morgan = require('morgan'),
-  path = require('path'),
-  portNumber = process.env.PORT || 5000;
+  path = require('path')
 
 app.use(express.static(__dirname));
-app.use(morgan('dev'));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-app.listen(portNumber, function () {
-  console.log("Listening on port " + portNumber);
-});
+app.listen(process.env.PORT || 5000);
