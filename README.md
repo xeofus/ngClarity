@@ -1,6 +1,6 @@
 # ngClarity
 
-for working on localhost with ng serve, change <base href="/dist/"> to <base href="/"> in /src/index.html
+for working on localhost with ng serve, change `<base href="/dist/">` to `<base href="/">` in /src/index.html
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 ## Development server
