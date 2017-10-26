@@ -18,14 +18,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     Highcharts.chart('chart1', {
       chart: {
-        type: 'column',
-        options3d: {
-          enabled: true,
-          alpha: 10,
-          beta: 10,
-          viewDistance: 25,
-          depth: 40
-        }
+        type: 'column'
       },
       title: {
         text: 'Schedules work progress'
