@@ -83,6 +83,9 @@ export class DashboardComponent implements OnInit {
       title: {
         text: 'Browser market shares at a specific website, 2014'
       },
+      credits: {
+        enabled: false
+      },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
       },
