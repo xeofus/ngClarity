@@ -5,7 +5,8 @@ import {ClarityModule } from "clarity-angular";
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChartModule } from 'angular-highcharts';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {AppComponent } from './app.component';
 import {AppRoutingModule} from "./routing.module";
 import {DashboardComponent} from "./pages/dashboard/dashboard.component";
@@ -36,8 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    FormsModule,
-    ReactiveFormsModule
+    ChartModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,7 @@
 {
   "dashboard": "Обзор",
   "settings": "Настройки",
-  "tasks": "Расписания",
-  "billing": "Биллинг",
   "pagenotfound": "Страница не найдена",
-  "reports": "Отчеты",
-  "admin": "Админка"
+  "profile": "Профиль",
+  "logout": "Выйти"
 }
